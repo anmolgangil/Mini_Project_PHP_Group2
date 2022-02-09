@@ -1,0 +1,19 @@
+.print-area{
+   
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+}
+@media print {
+    body *{
+        visibility: hidden;
+    }
+
+    .print-area *{
+        visibility: visible;
+    }
+    body{
+        zoom: 67%;
+    }
+} 
