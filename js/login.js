@@ -26,12 +26,14 @@ function auth(userName, password) {
             console.log(value.userName);
             if (value.email == userName && value.password == password) {
                 alert("welcome "+userName);
-                $(location).attr('href', "../html/template.html")
+                $(location).attr('href', "../html/template_page.html")
                 return true;
             }
+
+            
         });
         },
-        error: function (data) {
+        error: function () {
             alert("Something went wrong");
         }
     })

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>resume generator</title>
+    <link rel="stylesheet" href="../css/formTemplate.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+</head>
+<body>
+    <div class="container" id="cv-form">
+    <h1 class="text-center my-2">Resume Generator</h1>
+    <p class="text-center">Step towards a professional career </p>
+
+    <div class="row">
+        
+        <div class="mb-3">
+            <label for="" class="form-label"><h4 class="text-danger">Objective</h4></label>
+            <textarea class="form-control" id="objective" rows="3" data-bs-toggle="tooltip" data-bs-placement="top" 
+            title="Objective_Description
+            -A resume objective is a top part of a resume that states your career goals and shows why you are applying for the job. To write a resume objective can also represent your professional goals, showing employers how the job aligns with your long-term career path." >
+            </textarea>
+        </div>
+
+        <div class="mb-3"  id="we">
+            <label for="" class="form-label"><h4 class="text-danger">Work Experience</h4></label>
+            <textarea class="form-control weField" id="workexp" rows="3" data-bs-toggle="tooltip" data-bs-placement="top" 
+            title="Experience__description
+            -Describe your responsibilities in concise statements led by strong verbs. Work in this company dedicating the best responsibility in the area that corresponds, delivering the best results for the company and improving productivity." >
+            </textarea>
+            
+            <div class="container text-center mt-1" id="weAddButton">
+                <button onclick="addNewWEField()" class="btn btn-dark btn-sm">ADD</button>
+            </div>
+        </div>
+
+        <div class="mb-3" id="eq">
+            <label for="" class="form-label"><h4 class="text-danger">Educational Details</h4></label>
+            <textarea class="form-control eqField" id="edudetails" rows="3" data-bs-toggle="tooltip" data-bs-placement="top" 
+            title="educational details__description
+            -Educational Qualification will include the details of your education starting from recent to former with all necessary information in crisp manner">
+            </textarea>
+            
+            <div class="container text-center mt-1" id="eqAddButton">
+                <button onclick="addNewEQField()" class="btn btn-dark btn-sm">ADD</button>
+            </div>
+        </div>
+
+        <div class="mb-3" id="ctin">
+            <label for="" class="form-label"><h4 class="text-danger">Certification/Internships</h4></label>
+            <textarea class="form-control ctinField" id="ctintern" rows="3" data-bs-toggle="tooltip" data-bs-placement="top" 
+            title="experience__description
+            -Certification details in specific field in a specific tool/language/Technology,Work in the company(referning to internship) dedicating the best responsibility in the area that corresponds.
+            " >
+            </textarea>
+            
+            <div class="container text-center mt-1" id="ctinAddButton">
+                <button onclick="addNewCTINField()" class="btn btn-dark btn-sm">ADD</button>
+            </div>
+        </div>
+
+        <div class="form-group mt-3">
+            <h4 class="text-danger">Personal Details</h4>
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" data-bs-toggle="tooltip" data-bs-placement="right" title="Enter your Name here">
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="contact" class="form-label">Phone</label>
+            <input type="number" class="form-control" id="contact" data-bs-toggle="tooltip" data-bs-placement="right" title="Enter your Contact number here">
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="address" class="form-label">Address</label>
+            <textarea class="form-control" id="address" data-bs-toggle="tooltip" data-bs-placement="right" title="Enter your Address here - includes detail address having street number,landmark,city,zipcode etc.."></textarea>
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" data-bs-toggle="tooltip" data-bs-placement="right" title="Enter your Email here - ex: abc@example.com">
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="language" class="form-label">Languages</label>
+            <input type="text" class="form-control" id="language" data-bs-toggle="tooltip" data-bs-placement="right" title="Enter your language proficiency here">
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="hobbies" class="form-label">Hobbies</label>
+            <input type="text" class="form-control" id="hobbies" data-bs-toggle="tooltip" data-bs-placement="right" title="Enter your Hobbies here">
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="skills" class="form-label">Skills</label>
+            <input type="text" class="form-control" id="skills" data-bs-toggle="tooltip" data-bs-placement="right" title="Enter your skillset here">
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="avatar"> upload image</label><br>
+            <input type="file" id="avatar" accept="image/*">
+        </div>
+        
+
+        <div class="container text-center mt-5">
+            <button onclick="generateCV()" class="btn btn-success btn-lg">Generate CV</button>
+        </div>
+
+    </div>
+</div>
+
+<!-- CV Template -->
+
+<div class="container-fluid" id="cvtemplate">
+    <div class="row">
+
+        <div class="col-md-4 text-center background">
+            <!-- 1st column -->
+            <img src="../images/profilepic.jpg" alt="" class="img-fluid rounded-circle py-3" id="imageT"/> 
+
+            <div class="container colortext">
+                <p id="nameT">Ankush S Dharkar</p>
+                <p id="contactT">8806703017,8999806642</p>
+                <p id="addressT">M-206,ShaktiNagar, Durgapur, Chandrapur.</p>
+                <p id="emailT">ankush@gmail.com</p>
+                <hr class="hrline">
+            </div>
+            <div class="text-start colortext">
+                <h5 class="underline">Languages</h5>
+                <p id="languageT">
+                    English, Hindi, Marathi
+                </p>
+            </div>
+
+            <div class="text-start colortext">
+                <h5 class="underline">Hobbies</h5>
+                <p id="hobbiesT">
+                    Cooking, Music, trecking
+                </p>
+            </div>
+
+            <div class="text-start colortext">
+                <h5 class="underline">Skills</h5>
+                <p id="skillsT">
+                    Java, HTML, CSS
+                </p>
+            </div>
+        </div>
+        
+
+        <div class="col-md-8">
+            <!-- 2ndcolumn -->
+            <div class="card">
+                <div class="card-header bground">
+                    <h3>Objective</h3>
+                </div>
+                <div class="card-body">
+                    <p id="objectiveT">To work with an Organization where I can contribute best of my skills and capabilities towards 
+                        fulfilling Organization goals while honing my skills.</p>
+                </div>
+            </div>
+<br>
+            <div class="card">
+                <div class="card-header bground">
+                    <h3>Work Experience</h3>
+                </div>
+                <div class="card-body">
+                    <ul id="weT">
+                        <li>Working as Sofware Engineer-Trainee at Cybage Softwares Pvt Ltd. Pune from Jan 2022 till date.</li>
+                        <li>Served as an Assistant Professor in JD College of Engineering and Management, Nagpur from 
+                            December 2017 to November 2019.</li>
+                    </ul>
+                </div>
+            </div>
+<br>
+            <div class="card">
+                <div class="card-header bground">
+                    <h3>Educational Qualification</h3>
+                </div>
+                <div class="card-body">
+                    <ul id="eqT">
+                        <li>Master of Technology in Integrated Power System from RTM Nagpur University in year 2017.</li>
+                        <li>Bachelor of Engineering in Electrical Engineering from RTM Nagpur University in year 2015.</li>
+                        <li>HSSC from Nagpur Board in year 2011.</li>
+                        <li>SSC from Nagpur Board in year 2019.</li>
+                    </ul>
+                </div>
+            </div>
+<br>
+            <div class="card">
+                <div class="card-header bground">
+                    <h3>Certification/Internships</h3>
+                </div>
+                <div class="card-body">
+                    <ul id="ctinT">
+                        <li>CDAC ACTS Pune.</li>
+                        <li>Electrical Spuervisor at RS Electricals</li>
+                        <li>Solar Cooker Internationals</li>
+                    </ul>
+                </div>
+            </div>  
+        </div>
+    </div>
+
+    <div class="container text-center mt-3">
+        <button onclick="printCV()" class="btn btn-warning" id="printbtn">Print CV</button>
+    </div>
+
+</div>
+
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/formTemplate.js"></script>
+
+</body>
+</html>

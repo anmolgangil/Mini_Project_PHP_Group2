@@ -1,0 +1,42 @@
+
+#image{
+    border: 1px solid rgb(247, 37, 37);
+    width: 200px;
+}
+
+
+.background{
+    background-color: rgb(48, 49, 45);
+}
+
+.colortext{
+    color:azure;
+}
+
+.hrline{
+    size: 10px;
+    color: red;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+#cvtemplate{
+    display: none;
+}
+
+.bground{
+   background-color: rgb(45, 238, 71);
+   color: rgb(48, 49, 45);
+}
+
+/* this is to hide the print button */
+@media print {
+    body *{
+        visibility:hidden;
+    }
+    .row *{
+        visibility: visible;
+    }
+}
