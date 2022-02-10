@@ -220,6 +220,7 @@
     padding-left: 80px;
     font-size: 20px;
     font-weight: normal;
+    left: 0;
 }
 
 .edu-group span {
@@ -262,6 +263,7 @@ button:hover {
         visibility: visible;
     }
     body{
-        zoom: 67%;
+        zoom: 78%;
+        margin: none;
     }
 }

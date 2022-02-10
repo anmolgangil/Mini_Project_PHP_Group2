@@ -13,7 +13,7 @@ $(document).ready(function () {
 //authenticate function to make ajax call
 function auth(userName, password) {
     $.ajax({
-        
+
         //SEND TO MY SERVER URL
         url: "http://localhost:3000/user",
         method: "GET",
@@ -21,17 +21,17 @@ function auth(userName, password) {
 
         data: '{"userName": "' + userName + '", "password" : "' + password + '"}',
         success: function (data) {
-         $.each(data, function(key, value){ 
+            $.each(data, function (key, value) {
 
-            console.log(value.userName);
-            if (value.email == userName && value.password == password) {
-                alert("welcome "+userName);
-                $(location).attr('href', "../html/template_page.html")
-                return true;
-            }
+                console.log(value.userName);
+                if (value.email == userName && value.password == password) {
+                    alert("welcome " + userName);
+                    $(location).attr('href', "../html/template_page.html")
+                    return true;
+                }
 
-            
-        });
+
+            });
         },
         error: function () {
             alert("Something went wrong");
